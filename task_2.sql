@@ -1,4 +1,4 @@
--- Switch to the correct database
+-- Ensure we are using the correct database
 USE alx_book_store;
 
 -- Create Authors table
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS customers (
     address TEXT
 );
 
--- Create Orders table
+-- Create Orders table (Fixing issues)
 CREATE TABLE IF NOT EXISTS orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS orders (
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE
 );
 
--- Create Order Details table
+-- Create Order Details table (Fixing issues)
 CREATE TABLE IF NOT EXISTS order_details (
     orderdetail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
